@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>체셔의 잡다한 블로그</title>
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+  
+	<style>
+	h1, h2{
+		text-align: center
+	}
+	</style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="MyBlog.html">체셔'</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" onmouseover="menu_over(this);" onmouseout="menu_out(this);">
+        <a class="nav-link" href="Review.html">작품 리뷰<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" onmouseover="menu_over(this);" onmouseout="menu_out(this);">
+        <a class="nav-link" href="job.html">잡소리</a>
+      </li>
+      <li class="nav-item" onmouseover="menu_over(this);" onmouseout="menu_out(this);">
+        <a class="nav-link" href="visitor.html">회원가입</a>
+      </li>
+      <li class="nav-item" onmouseover="menu_over(this);" onmouseout="menu_out(this);">
+        <a class="nav-link" href="illustration.html">일러스트</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0" id="loginForm">
+      <input class="form-control mr-sm-2" type="text" placeholder="ID" aria-label="ID" id="id" required>
+      <input class="form-control mr-sm-2" type="password" placeholder="PWD" aria-label="PWD" id="pwd" required>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
+    </form>
+  </div>
+</nav>
+<div>
+<br><br><br>
+<h1>2012</h1>
+<br>
+<h2>남자고교생의 일상</h2>
+<br>
+<p style="text-align: center"><img src="../image/남고일.jpg" width="498" height="709" title="남고일" class="img"></p>
+<br>
+<p style="text-align: center">장르: 일상,개그<br>개그물의 정석이라 할 만하다. 킬링타임용으로 가끔 보기에 안성맞춤. 남고딩들의 드립이 주요 내용을 이룬다.</p>
+<br>
+<h2>길티 크라운</h2>
+<br>
+<p style="text-align: center"><img src="../image/길크.jpg" width="498" height="709" title="길티크라운" class="img"></p>
+<br>
+<p style="text-align: center">장르: 판타지,액션<br>브금크라운. OST나 bgm이 매우 좋아 붙여진 별명. 스토리 자체도 괜찮은 편이지만 결말이 흐지부지라는 얘기가 대다수.</p>
+<br>
+<h2>헌터x헌터</h2>
+<br>
+<p style="text-align: center"><img src="../image/헌헌.jpg" width="498" height="709" title="길티크라운" class="img"></p>
+<br>
+<p style="text-align: center">장르: 판타지,액션<br>일해라 토가시, 토해라 일가시. 작가인 토가시가 휴재를 길게(엄청) 하고 있어 질린 사람들이 이렇게 많이 부른다.<br>
+막상 내용은 한 번 보기 시작하면 끊지 못 할 정도로 재미있다.</p> 
+</div>
+
+<div class="modal" id="myModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">로그인 결과</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+<script src="../js/myblog.js" ></script>
+</body>
+</html>
