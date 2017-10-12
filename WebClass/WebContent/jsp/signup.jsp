@@ -12,7 +12,7 @@
 <body>
 <div class="container">
 
-  <form id="signupForm" class="form-signin" action="" method="post">
+  <form id="signupForm" class="form-signin" action="/WebClass/signup" method="post">
     <h2 class="form-signin-heading">Please sign up</h2>
     
     <label for="inputEmail" class="sr-only">Email address</label>
@@ -39,13 +39,23 @@
 
 <script>
 	<%-- 회원 가입이 실패한 경우 처리 추가 --%>
-	<%--
+		
+	<%if ("error".equals(request.getAttribute("msg"))) {%>
+		
+		document.getElementById('inputEmail').value = <%= request.getAttribute("w_id") %>;
+		document.getElementById('inputPassword').value = <%= request.getAttribute("w_pwd") %>;
+		document.getElementById('inputName').value = <%= request.getAttribute("w_name") %>;
+		document.getElementById('inputNickName').value = <%= request.getAttribute("w_nickname") %>;
+		
 		var myModal = $('#myModal');
+		
 		myModal.find('.modal-title').text('Sign Up Error');
 		myModal.find('.modal-body').text('회원 가입 시 오류가 발생하였습니다.');
 		myModal.modal();
-	--%>
-</script>
+		
+	<%}%>
+		
+	</script>
 
 </body>
 </html>

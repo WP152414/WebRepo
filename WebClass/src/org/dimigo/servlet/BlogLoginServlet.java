@@ -16,37 +16,34 @@ import org.dimigo.vo.UserVO;
 import com.google.gson.JsonObject;
 
 /**
- * Servlet implementation class LoginServlet
+ * Servlet implementation class BlogLoginServlet
  */
-@WebServlet("/login")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/bloglogin")
+public class BlogLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public BlogLoginServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
 	/**
-	 * @see HttpServlet#HttpServlet()
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	public LoginServlet() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		 //login.jsp 포워딩
+		// login.jsp 포워딩
 		RequestDispatcher rd = request.getRequestDispatcher("/jsp/login.jsp");
 		rd.forward(request, response);
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-
-	@SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked")
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
@@ -58,7 +55,7 @@ public class LoginServlet extends HttpServlet {
 
 		// id, pwd 정합성 체크
 		boolean result = true;
-		if (result) {
+		if (id.equals("test@naver.com")) {
 			// 세션에 사용자 정보 생성
 			HttpSession session = request.getSession();
 			UserVO user = new UserVO();
@@ -66,17 +63,19 @@ public class LoginServlet extends HttpServlet {
 			user.setName("홍길동");
 			user.setNickname("의적");
 			session.setAttribute("user", user);
-			RequestDispatcher rd = request.getRequestDispatcher("/jsp/home.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/jsp/myblog.jsp");
 			rd.forward(request, response);
 		} else {
 			request.setAttribute("msg", "error");
+			request.setAttribute("w_id", "\"" +id+ "\"");
+			request.setAttribute("w_pwd", "\"" +pwd+ "\"");
 			RequestDispatcher rd = request.getRequestDispatcher("/jsp/login.jsp");
 			rd.forward(request, response);
 		}
 
 	}
-
-	protected void doPost2(HttpServletRequest request, HttpServletResponse response)
+    
+    protected void doPost2(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		String id = request.getParameter("id");
@@ -85,18 +84,6 @@ public class LoginServlet extends HttpServlet {
 
 		response.setContentType("application/json;charset=utf-8");
 		PrintWriter out = response.getWriter();
-		/*
-		 * { "id" : id }
-		 */
-		// out.println("{");
-		// out.println("\"id\":\"" + id + "\"");
-		// out.println("}");
-
-		// JSON Simple Library
-		// JSONObject json = new JSONObject();
-		// json.put("id", id);
-		// System.out.println(json.toString());
-		// out.write(json.toJSONString());
 
 		// Gson Library
 		JsonObject json = new JsonObject();
