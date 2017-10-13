@@ -68,7 +68,7 @@ public class BlogLoginServlet extends HttpServlet {
 		} else {
 			request.setAttribute("msg", "error");
 			request.setAttribute("w_id", "\"" +id+ "\"");
-			request.setAttribute("w_pwd", "\"" +pwd+ "\"");
+//			request.setAttribute("w_pwd", "\"" +pwd+ "\"");
 			RequestDispatcher rd = request.getRequestDispatcher("/jsp/login.jsp");
 			rd.forward(request, response);
 		}

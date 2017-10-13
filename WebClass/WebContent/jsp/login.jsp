@@ -17,7 +17,7 @@
 	<div class="container">
 
 		<form class="form-signin" action="/WebClass/bloglogin" method="post">
-			<h2 class="form-signin-heading">Please sign in</h2>
+			<h2 class="form-signin-heading">Login</h2>
 
 			<label for="inputEmail" class="sr-only">Email address</label> <input
 				type="email" name="id" id="inputEmail" class="form-control"
@@ -26,8 +26,7 @@
 				type="password" name="pwd" id="inputPassword" class="form-control"
 				placeholder="Password" required>
 
-			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign
-				in</button>
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
 		</form>
 
 	</div>
@@ -50,12 +49,12 @@
 		
 	<%if ("error".equals(request.getAttribute("msg"))) {%>
 		document.getElementById('inputEmail').value = <%= request.getAttribute("w_id") %>;
-		document.getElementById('inputPassword').value = <%= request.getAttribute("w_pwd") %>;
+		<%--	document.getElementById('inputPassword').value = <%= request.getAttribute("w_pwd") %>; --%>
 		
 		var myModal = $('#myModal');
 		
 		myModal.find('.modal-title').text('Login Error');
-		myModal.find('.modal-body').text('Invalid username or password');
+		myModal.find('.modal-body').text('로그인시 오류가 발생하였습니다.');
 		myModal.modal();
 	<%}%>
 		
